@@ -50,3 +50,43 @@ python3 -m http.server 8080
 - **滚动导航**：使用 Intersection Observer 监听 section，当 section 进入视口一半以上时更新侧边圆点和顶部导航的 active 状态
 - **labs 动态加载**：页面加载时 fetch `./labs.json`，然后 renderLabs 将数据渲染为卡片
 - **CSS 架构**：全局滚动吸附（scroll-snap）、CSS Grid/Flexbox 布局、大量 CSS 变量用于主题色彩
+
+---
+
+## 生产部署
+
+**线上地址：** https://1xplore.cn （2026-06-05 启用 HTTPS）
+
+**服务器：** 阿里云 ECS（47.122.112.224），admin 用户（sudo 免密）
+
+**架构：**
+```
+Nginx 1.24（80/443）
+└── 1xplore.cn / www.1xplore.cn → 反代 → 127.0.0.1:8088
+                                     └── python3 -m http.server 8088
+                                          └── /home/admin/1xplore.cn/
+```
+
+**端口分配：**
+| 端口 | 服务 |
+|------|------|
+| 80/443 | Nginx |
+| 8080 | searxng（已占用，勿占）|
+| 8088 | Test10 静态站（python http.server）|
+| 3000/3001 | Test8 PayTrack（其他项目） |
+
+**部署/重启：**
+```bash
+ssh admin@47.122.112.224
+# 部署
+cd /home/admin/1xplore.cn && nohup python3 -m http.server 8088 > /tmp/1xplore-server.log 2>&1 &
+sudo nginx -t && sudo systemctl reload nginx
+```
+
+**SSL 证书：** acme.sh
+- 证书路径：`/etc/nginx/ssl/1xplore.{fullchain.pem,key}`
+- 续期：`~/.acme.sh/acme.sh --renew -d 1xplore.cn`
+
+**注意：**
+- 1xplore.cn 之前用 Python http.server 跑在 80 端口直接暴露，已迁移到 8088 由 Nginx 反代（更安全）
+- labs.json 改后无需重启服务，直接刷新页面即可
