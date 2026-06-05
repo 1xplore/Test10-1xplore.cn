@@ -1,0 +1,18 @@
+{
+  "labs": [
+    {
+      "id": "1",
+      "title": "PayTrack 合同付款节点管理",
+      "description": "AI 自动解析合同付款节点，流程自动化管理",
+      "url": "https://paytrack.1xplore.cn",
+      "date": "2026-05"
+    },
+    {
+      "id": "2",
+      "title": "实验项目 B",
+      "description": "placeholder — 待填充",
+      "url": "#",
+      "date": "2026-06"
+    }
+  ]
+}
