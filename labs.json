@@ -2,17 +2,24 @@
   "labs": [
     {
       "id": "1",
-      "title": "PayTrack 合同付款节点管理",
-      "description": "AI 自动解析合同付款节点，流程自动化管理",
-      "url": "https://paytrack.1xplore.cn",
-      "date": "2026-05"
+      "title": "东南亚管线生产厂可行性研究报告",
+      "description": "管线生产厂可行性分析报告",
+      "url": "https://pipe-factory-feasibility.pages.dev/",
+      "date": "2026-06-05"
     },
     {
       "id": "2",
-      "title": "实验项目 B",
-      "description": "placeholder — 待填充",
-      "url": "#",
-      "date": "2026-06"
+      "title": "增资扩股协议书风险审查报告",
+      "description": "增资扩股法律风险分析",
+      "url": "https://risk-report-hex.pages.dev",
+      "date": "2026-05-29"
+    },
+    {
+      "id": "3",
+      "title": "企业AI数字人营销法律风险分析",
+      "description": "AI数字人营销合规性评估",
+      "url": "https://ai-avatars-legal-risk.pages.dev",
+      "date": "2026-05-28"
     }
   ]
 }
