@@ -1,206 +1,314 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>一探科技 | 1explore — 服务型小企业数字化转型专家</title>
-  <meta name="description" content="一探科技，数字1与探索的结合。专注服务业数字化转型，AI驱动的数据获取与流程自动化解决方案。">
+  <title>1xplore — 数据治理，从无感录入开始</title>
+  <meta name="description" content="1xplore（一探），从源头出发的数据治理小团队。AI 自动化 + 点对点交付，让服务业小公司也有自己的 AI 工作流。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-lang="zh">
 
-  <!-- 顶部导航 -->
+  <!-- 全局背景：渐变光晕 + 鼠标 spotlight -->
+  <div class="page-bg" aria-hidden="true">
+    <div class="page-bg__gradient"></div>
+    <div class="page-bg__spotlight" id="mouseLight"></div>
+    <div class="page-bg__grid"></div>
+  </div>
+
+  <!-- 导航 -->
   <nav class="navbar">
-    <div class="nav-logo">1explore</div>
+    <a href="#hero" class="nav-logo">1xplore</a>
     <ul class="nav-links">
-      <li><a href="#hero" class="active">首页</a></li>
-      <li><a href="#about">我们是谁</a></li>
-      <li><a href="#services">我们做什么</a></li>
-      <li><a href="#cases">我们做过什么</a></li>
-      <li><a href="#labs">AI实验室</a></li>
-      <li><a href="#contact">联系我们</a></li>
+      <li><a href="#hero" class="active">
+        <span class="lang-zh">首页</span><span class="lang-en">Home</span>
+      </a></li>
+      <li><a href="#about">
+        <span class="lang-zh">我们是谁</span><span class="lang-en">Who</span>
+      </a></li>
+      <li><a href="#method">
+        <span class="lang-zh">方法论</span><span class="lang-en">Method</span>
+      </a></li>
+      <li><a href="#work">
+        <span class="lang-zh">已交付</span><span class="lang-en">Work</span>
+      </a></li>
+      <li><a href="#labs">
+        <span class="lang-zh">实验室</span><span class="lang-en">Labs</span>
+      </a></li>
+      <li><a href="#contact">
+        <span class="lang-zh">联系</span><span class="lang-en">Contact</span>
+      </a></li>
     </ul>
-    <div class="nav-wechat">
-      <a href="#contact">加微信</a>
+    <div class="nav-right">
+      <div class="lang-switch" role="tablist" aria-label="Language switch">
+        <button type="button" data-lang-btn="zh" class="active" aria-label="中文">ZH</button>
+        <span class="lang-switch__sep">/</span>
+        <button type="button" data-lang-btn="en" aria-label="English">EN</button>
+      </div>
     </div>
   </nav>
 
-  <!-- 主容器：snap滚动 -->
   <main class="snap-container">
 
-    <!-- 1. Hero -->
+    <!-- 1. HERO -->
     <section id="hero" class="section hero-section">
-      <div class="hero-bg-grid"></div>
       <div class="hero-content">
-        <div class="hero-badge">服务业数字化转型专家</div>
-        <h1 class="hero-title">
-          <span class="hero-title-1">数字1</span>
-          <span class="hero-title-sep">+</span>
-          <span class="hero-title-2">探索</span>
+        <div class="hero-eyebrow" data-reveal>
+          <span class="lang-zh">数据治理工作室 · 服务业</span>
+          <span class="lang-en">Data governance studio · For services</span>
+        </div>
+        <h1 class="hero-title" data-reveal>
+          <span class="lang-zh" id="heroTitleZh">
+            <span class="char">数</span><span class="char">据</span><span class="char">治</span><span class="char">理</span><span class="char-sep">，</span><span class="char">从</span><span class="char">无</span><span class="char">感</span><span class="char">录</span><span class="char">入</span><span class="char">开</span><span class="char">始</span>
+          </span>
+          <span class="lang-en hero-en-sub" id="heroTitleEn">
+            <span class="char">Data</span> <span class="char">governance,</span> <span class="char">starting</span> <span class="char">from</span> <span class="char">invisible</span> <span class="char">entry.</span>
+          </span>
         </h1>
-        <p class="hero-subtitle">让数据自动填录，让人只做审核</p>
-        <p class="hero-desc">一探科技，专注用AI从数据源头解决服务业数字化转型难题</p>
-        <div class="hero-actions">
-          <a href="#labs" class="btn-primary">探索AI实验室</a>
-          <a href="#contact" class="btn-secondary">联系我们</a>
+        <p class="hero-sub" data-reveal>
+          <span class="lang-zh">让重复的填录自己跑，让人只看最后一眼。</span>
+          <span class="lang-en">Repetition runs itself. The final say is yours.</span>
+        </p>
+        <div class="hero-actions" data-reveal>
+          <a href="#labs" class="btn-primary">
+            <span class="lang-zh">探索 AI 实验室</span>
+            <span class="lang-en">Explore Labs</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="#contact" class="btn-secondary">
+            <span class="lang-zh">与我们聊聊</span>
+            <span class="lang-en">Say Hello</span>
+          </a>
         </div>
       </div>
-      <div class="scroll-hint">
-        <span>滚动探索更多</span>
+      <div class="scroll-hint" data-reveal>
+        <span class="lang-zh">向下滚动</span>
+        <span class="lang-en">Scroll</span>
         <div class="scroll-arrow"></div>
       </div>
     </section>
 
-    <!-- 2. 我们是谁 -->
+    <!-- 2. 一探是谁 -->
     <section id="about" class="section about-section">
-      <div class="section-label">01 / 我们是谁</div>
+      <div class="section-label">
+        <span class="lang-zh">01 · 我们是谁</span>
+        <span class="lang-en">01 · Who</span>
+      </div>
       <div class="about-content">
-        <h2 class="section-title">一探究竟</h2>
-        <div class="about-text">
-          <p class="placeholder-text">[ 关于我们的故事 — placeholder 文案 ]</p>
-          <p class="about-body">
-            一探科技，诞生于对"数据真相"的执着探索。<br>
-            我们相信，每一个被忽视的数据缝隙里，都藏着一整个效率提升的空间。<br>
-            从工程咨询的全产业链视角出发，我们看见了服务型企业最稀缺的，<br>
-            不是算法，而是真实、可信、有序的源头数据。<br>
-            于是我们选择了一条少有人走的路：<br>
-            <strong>不从模型出发，而从数据出发。</strong>
+        <h2 class="section-title" data-reveal>
+          <span class="lang-zh">我们是一支<span class="hl">从源头出发</span>的小团队。</span>
+          <span class="lang-en">A small team, <span class="hl">starting at the source</span>.</span>
+        </h2>
+        <div class="about-body" data-reveal>
+          <p>
+            <span class="lang-zh">
+              一探（1xplore）成立于对"数据真相"的执念。每一个被忽视的数据缝隙里，都藏着一整个效率提升的空间。我们没有从中台出发，也没有从模型出发——我们只从企业最初的那一寸数据：合同的条款、报表的口径、表单的字段，动手。
+            </span>
+            <span class="lang-en">
+              1xplore was founded on a stubborn belief about data. Behind every overlooked data gap lies an entire space for efficiency. We didn't start with platforms, nor with models. We start at the very first inch of an enterprise's data — the clauses in a contract, the columns in a report, the fields in a form.
+            </span>
           </p>
-          <div class="about-tags">
-            <span class="tag">数字1 + 探索</span>
-            <span class="tag">AI + 流程自动化</span>
-            <span class="tag">数据源头视角</span>
-            <span class="tag">服务型小企业</span>
-          </div>
+          <p>
+            <span class="lang-zh">
+              我们是一支小团队，没有大厂光环，也不追逐风口。但我们交付过的每一个项目，都用点对点的方式跟进到能跑起来为止。我们相信，慢一点、扎实一点，反而更快。
+            </span>
+            <span class="lang-en">
+              We are a small team — no big-tech halo, no hype-chasing. Every project we take on, we follow through point-by-point until it actually runs. Slower and steadier, we believe, is the faster way.
+            </span>
+          </p>
+        </div>
+        <div class="about-tags" data-reveal>
+          <span class="tag">Data source first</span>
+          <span class="tag">Small team, point-to-point</span>
+          <span class="tag">Shipping in real</span>
+          <span class="tag lang-zh">服务业</span>
+          <span class="tag lang-en">For services</span>
         </div>
       </div>
     </section>
 
-    <!-- 3. 我们做什么 -->
-    <section id="services" class="section services-section">
-      <div class="section-label">02 / 我们做什么</div>
-      <h2 class="section-title">核心理念</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">🔍</div>
-          <h3>数据源头诊断</h3>
-          <p>从数据获取的源头开始梳理，找到流程断点和人工填报的瓶颈所在</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🤖</div>
-          <h3>AI数据填录</h3>
-          <p>用AI代替人工完成重复性数据采集、填入与监听，人工只做最终审核</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">⚡</div>
-          <h3>流程自动化</h3>
-          <p>将审核结果自动同步到管理系统，大幅缩短流程周期，降低出错率</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">📊</div>
-          <h3>数字化咨询</h3>
-          <p>基于全产业链视角，为服务型企业提供可落地的数字化转型方案</p>
-        </div>
+    <!-- 3. 核心理念 -->
+    <section id="method" class="section method-section">
+      <div class="section-label">
+        <span class="lang-zh">02 · 方法论</span>
+        <span class="lang-en">02 · Method</span>
       </div>
-      <div class="services-compare">
-        <div class="compare-item compare-before">
-          <div class="compare-label">传统方式</div>
-          <div class="compare-flow">
-            <div class="flow-node">人工采集数据</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-node">手动填入表单</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-node">人工核对</div>
-          </div>
+      <h2 class="section-title" data-reveal>
+        <span class="lang-zh">三步，让数据自己流起来。</span>
+        <span class="lang-en">Three steps. Real data, flowing.</span>
+      </h2>
+      <div class="method-flow" data-reveal>
+        <div class="method-step">
+          <div class="method-step-num">01</div>
+          <div class="method-step-icon">◉</div>
+          <h3 class="method-step-title">
+            <span class="lang-zh">诊断数据源头</span>
+            <span class="lang-en">Trace the source</span>
+          </h3>
+          <p class="method-step-desc">
+            <span class="lang-zh">从企业真实的数据入口入手，找到断点和重复录入的根源。</span>
+            <span class="lang-en">Start at the real entry points — find where things break and double up.</span>
+          </p>
         </div>
-        <div class="compare-item compare-after">
-          <div class="compare-label">一探方式</div>
-          <div class="compare-flow">
-            <div class="flow-node">AI自动采集</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-node">AI自动填入</div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-node highlight">人工只做审核</div>
-          </div>
+        <div class="method-arrow" aria-hidden="true">→</div>
+        <div class="method-step">
+          <div class="method-step-num">02</div>
+          <div class="method-step-icon">◈</div>
+          <h3 class="method-step-title">
+            <span class="lang-zh">AI 自动填录</span>
+            <span class="lang-en">AI fills in</span>
+          </h3>
+          <p class="method-step-desc">
+            <span class="lang-zh">把重复、判断、核对交给模型，让 AI 去做 AI 擅长的事。</span>
+            <span class="lang-en">Hand repetition, judgement, and verification to the model — what it's good at.</span>
+          </p>
+        </div>
+        <div class="method-arrow" aria-hidden="true">→</div>
+        <div class="method-step">
+          <div class="method-step-num">03</div>
+          <div class="method-step-icon">◇</div>
+          <h3 class="method-step-title">
+            <span class="lang-zh">人只做审核</span>
+            <span class="lang-en">Humans review</span>
+          </h3>
+          <p class="method-step-desc">
+            <span class="lang-zh">人在关键节点签字，其余交给系统。</span>
+            <span class="lang-en">Humans sign off on the key calls. The rest runs itself.</span>
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- 4. 我们做过什么 -->
-    <section id="cases" class="section cases-section">
-      <div class="section-label">03 / 我们做过什么</div>
-      <h2 class="section-title">案例展示</h2>
-      <div class="case-card">
-        <div class="case-header">
-          <div class="case-name">PayTrack 合同付款节点管理系统</div>
-          <div class="case-status">运行中</div>
-        </div>
-        <p class="case-desc">
-          针对全过程工程咨询企业的合同付款节点管理场景，实现AI自动解析合同文本，提取付款节点信息，自动填入管理系统，人工仅需审核确认。打通从合同到付款的全链路跟踪。
-        </p>
-        <div class="case-tags">
-          <span class="tag">合同解析</span>
-          <span class="tag">付款跟踪</span>
-          <span class="tag">AI自动化</span>
-          <span class="tag">企业微信提醒</span>
-        </div>
-        <a href="https://paytrack.1xplore.cn" target="_blank" class="case-link">
-          访问系统 →
+    <!-- 4. 已交付 -->
+    <section id="work" class="section work-section">
+      <div class="section-label">
+        <span class="lang-zh">03 · 已交付</span>
+        <span class="lang-en">03 · Delivered</span>
+      </div>
+      <h2 class="section-title" data-reveal>
+        <span class="lang-zh">已交付的项目。</span>
+        <span class="lang-en">Delivered.</span>
+      </h2>
+      <div class="work-grid" data-reveal>
+        <a href="https://paytrack.1xplore.cn" target="_blank" rel="noopener" class="work-card">
+          <div class="work-card-header">
+            <div class="work-card-name">PayTrack</div>
+            <div class="work-card-status">
+              <span class="status-dot"></span>
+              <span class="lang-zh">运行中</span>
+              <span class="lang-en">Live</span>
+            </div>
+          </div>
+          <p class="work-card-desc">
+            <span class="lang-zh">针对全过程工程咨询企业的合同付款节点管理：AI 自动解析合同文本，提取付款节点，自动填入管理系统，人工仅需审核确认。</span>
+            <span class="lang-en">For whole-process engineering consulting firms: AI parses contract texts, extracts payment milestones, and fills them into the system — humans just review.</span>
+          </p>
+          <div class="work-card-tags">
+            <span class="tag">合同解析</span>
+            <span class="tag">付款跟踪</span>
+            <span class="tag">AI Automation</span>
+            <span class="tag">企业微信</span>
+          </div>
+          <div class="work-card-link">
+            <span class="lang-zh">访问系统</span>
+            <span class="lang-en">Open system</span>
+            <span class="link-arrow">→</span>
+          </div>
         </a>
-      </div>
-      <div class="placeholder-text" style="margin-top: 3rem; text-align: center; opacity: 0.5;">
-        [ 更多案例整理中，敬请期待 ]
+        <div class="work-card coming-soon">
+          <div class="coming-soon-mark">
+            <span class="lang-zh">更多在路上</span>
+            <span class="lang-en">More on the way</span>
+          </div>
+          <div class="coming-soon-title">Soon.</div>
+          <p class="coming-soon-desc">
+            <span class="lang-zh">我们用小步快走的方式，一个个交付。</span>
+            <span class="lang-en">We're shipping in small, careful steps.</span>
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- 5. AI实验室 -->
+    <!-- 5. AI 实验室 -->
     <section id="labs" class="section labs-section">
-      <div class="section-label">04 / AI实验室</div>
-      <h2 class="section-title">AI实验室</h2>
-      <p class="labs-intro">持续探索AI在服务业数字化中的应用边界，每个课题都是一个独立的实验。</p>
-      <div id="labs-grid" class="labs-grid">
+      <div class="section-label">
+        <span class="lang-zh">04 · 实验室</span>
+        <span class="lang-en">04 · Labs</span>
+      </div>
+      <h2 class="section-title" data-reveal>
+        <span class="lang-zh">实验室</span>
+        <span class="lang-en">Labs.</span>
+      </h2>
+      <p class="labs-intro" data-reveal>
+        <span class="lang-zh">一路走来，我们曾探索过的方向和成果。</span>
+        <span class="lang-en">A trail of directions explored, and what came of them.</span>
+      </p>
+      <div id="labs-grid" class="labs-grid" data-reveal>
         <!-- 由 labs.json 动态加载 -->
       </div>
     </section>
 
     <!-- 6. 联系我们 -->
     <section id="contact" class="section contact-section">
-      <div class="section-label">05 / 联系我们</div>
-      <h2 class="section-title">开始探索</h2>
+      <div class="section-label">
+        <span class="lang-zh">05 · 联系</span>
+        <span class="lang-en">05 · Contact</span>
+      </div>
+      <h2 class="section-title" data-reveal>
+        <span class="lang-zh">开始探索。</span>
+        <span class="lang-en">Begin the explore.</span>
+      </h2>
+      <p class="contact-intro" data-reveal>
+        <span class="lang-zh">用你最方便的方式找到我们。</span>
+        <span class="lang-en">Find us, in the way that suits you.</span>
+      </p>
       <div class="contact-content">
         <div class="contact-wechat">
           <div class="wechat-qr">
             <div class="qr-placeholder">
-              <span>微信二维码</span>
+              <span>微信</span>
+              <span class="lang-zh">二维码</span>
+              <span class="lang-en">QR</span>
             </div>
           </div>
-          <p class="wechat-tip">长按识别二维码，加微信咨询</p>
+          <p class="wechat-tip">
+            <span class="lang-zh">长按识别</span>
+            <span class="lang-en">Scan to add</span>
+          </p>
         </div>
         <div class="contact-info">
           <div class="contact-item">
-            <div class="contact-label">商务合作</div>
-            <div class="contact-value">请直接加微信沟通</div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-label">电子邮箱</div>
+            <div class="contact-label">
+              <span class="lang-zh">邮箱</span>
+              <span class="lang-en">Email</span>
+            </div>
             <div class="contact-value">hello@1xplore.cn</div>
           </div>
           <div class="contact-item">
-            <div class="contact-label">公司名称</div>
-            <div class="contact-value">一探科技数字（1explore）</div>
+            <div class="contact-label">
+              <span class="lang-zh">公司</span>
+              <span class="lang-en">Studio</span>
+            </div>
+            <div class="contact-value">1xplore · 一探</div>
           </div>
           <div class="contact-item">
-            <div class="contact-label">服务范围</div>
-            <div class="contact-value">服务业数字化转型咨询 · AI流程自动化实施</div>
+            <div class="contact-label">
+              <span class="lang-zh">服务范围</span>
+              <span class="lang-en">Scope</span>
+            </div>
+            <div class="contact-value">
+              <span class="lang-zh">数据治理 · AI 流程自动化</span>
+              <span class="lang-en">Data governance · AI workflows</span>
+            </div>
           </div>
         </div>
       </div>
       <div class="footer-bar">
-        <span>© 2026 一探科技数字 1explore</span>
-        <span>数字1 · 探索不止</span>
+        <span>© 2026 1xplore · 一探</span>
+        <span class="lang-zh lang-en">One. Always exploring.</span>
       </div>
     </section>
 
@@ -208,12 +316,12 @@
 
   <!-- 侧边圆点导航 -->
   <div class="side-dots">
-    <a href="#hero" class="dot active" title="首页"></a>
-    <a href="#about" class="dot" title="我们是谁"></a>
-    <a href="#services" class="dot" title="我们做什么"></a>
-    <a href="#cases" class="dot" title="我们做过什么"></a>
-    <a href="#labs" class="dot" title="AI实验室"></a>
-    <a href="#contact" class="dot" title="联系我们"></a>
+    <a href="#hero" class="dot active" data-dot="hero" title="首页"></a>
+    <a href="#about" class="dot" data-dot="about" title="我们是谁"></a>
+    <a href="#method" class="dot" data-dot="method" title="方法论"></a>
+    <a href="#work" class="dot" data-dot="work" title="已交付"></a>
+    <a href="#labs" class="dot" data-dot="labs" title="实验室"></a>
+    <a href="#contact" class="dot" data-dot="contact" title="联系"></a>
   </div>
 
   <script src="main.js"></script>
