@@ -85,34 +85,6 @@
     }
   }
 
-  /* ---------------- 鼠标 spotlight ---------------- */
-  function setupMouseLight() {
-    if (!matchMedia('(hover: hover)').matches) return;
-
-    const light = document.getElementById('mouseLight');
-    if (!light) return;
-
-    let raf = null;
-    let mx = 50, my = 50;
-    let tx = 50, ty = 50;
-
-    document.addEventListener('mousemove', (e) => {
-      tx = (e.clientX / window.innerWidth) * 100;
-      ty = (e.clientY / window.innerHeight) * 100;
-
-      if (raf) return;
-      raf = requestAnimationFrame(() => {
-        mx += (tx - mx) * 0.12;
-        my += (ty - my) * 0.12;
-        light.style.transform = `translate3d(${mx - 30}vmin, ${my - 30}vmin, 0)`;
-        raf = null;
-        if (Math.abs(tx - mx) > 0.1 || Math.abs(ty - my) > 0.1) {
-          requestAnimationFrame(arguments.callee);
-        }
-      });
-    }, { passive: true });
-  }
-
   /* ---------------- Labs 动态加载 ---------------- */
   async function loadLabs() {
     const grid = document.getElementById('labs-grid');
@@ -179,7 +151,6 @@
   setupI18n();
   setupReveal();
   setupTypewriter();
-  setupMouseLight();
   setupNavActive();
   loadLabs();
 })();
