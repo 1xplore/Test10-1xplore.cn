@@ -279,6 +279,9 @@ img, svg { display: block; max-width: 100%; }
   font-style: italic;
   font-weight: 400;
 }
+.hero-title .hero-line {
+  display: block;
+}
 .hero-title .char {
   display: inline-block;
   opacity: 0;
