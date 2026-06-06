@@ -105,15 +105,9 @@ img, svg { display: block; max-width: 100%; }
   border-bottom: 1px solid var(--line);
 }
 .nav-logo {
-  font-family: var(--font-sans-en);
-  font-weight: 600;
-  font-size: 1.1rem;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  display: flex;
+  align-items: center;
+  line-height: 1;
 }
 .nav-links {
   display: flex;
@@ -452,6 +446,12 @@ img, svg { display: block; max-width: 100%; }
 /* ================================
    WORK
    ================================ */
+.work-subtitle {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin: -1.5rem 0 2.5rem;
+  line-height: 1.7;
+}
 .work-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
