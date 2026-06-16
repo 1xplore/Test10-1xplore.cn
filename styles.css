@@ -455,19 +455,19 @@ img, svg { display: block; max-width: 100%; }
 .work-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-top: 3rem;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
 }
 .work-card {
   display: flex;
   flex-direction: column;
-  padding: 2.5rem 2.25rem;
+  padding: 1.75rem 1.75rem;
   background: var(--bg-elev);
   border: 1px solid var(--line);
-  border-radius: 20px;
+  border-radius: 18px;
   position: relative;
   transition: all var(--t-med) var(--ease);
-  min-height: 280px;
+  min-height: 220px;
   color: inherit;
 }
 .work-card:hover {
@@ -479,11 +479,12 @@ img, svg { display: block; max-width: 100%; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  gap: 0.75rem;
 }
 .work-card-name {
   font-family: var(--font-sans-en);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: -0.02em;
 }
@@ -492,11 +493,17 @@ img, svg { display: block; max-width: 100%; }
   align-items: center;
   gap: 0.4rem;
   font-family: var(--font-sans-en);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--ink-soft);
-  padding: 0.3rem 0.7rem;
+  padding: 0.25rem 0.6rem;
   background: rgba(123, 92, 255, 0.08);
   border-radius: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.work-card-status.status-soon {
+  background: rgba(142, 145, 168, 0.12);
+  color: var(--ink-mute);
 }
 .status-dot {
   width: 6px; height: 6px;
@@ -505,22 +512,26 @@ img, svg { display: block; max-width: 100%; }
   box-shadow: 0 0 0 3px rgba(45, 190, 127, 0.18);
   animation: pulse 2s var(--ease) infinite;
 }
+.work-card-status.status-soon .status-dot {
+  background: var(--ink-mute);
+  box-shadow: 0 0 0 3px rgba(142, 145, 168, 0.18);
+}
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
 }
 .work-card-desc {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--ink-soft);
-  line-height: 1.7;
-  margin: 0 0 1.5rem;
+  line-height: 1.65;
+  margin: 0 0 1.25rem;
   flex: 1;
 }
 .work-card-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
 }
 .work-card-link {
   display: inline-flex;
