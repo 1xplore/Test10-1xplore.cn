@@ -483,10 +483,22 @@ img, svg { display: block; max-width: 100%; }
   gap: 0.75rem;
 }
 .work-card-name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.work-card-name-en {
   font-family: var(--font-sans-en);
   font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: -0.02em;
+}
+.work-card-name-zh {
+  font-family: var(--font-sans-zh);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  letter-spacing: 0;
 }
 .work-card-status {
   display: flex;
